@@ -31,6 +31,24 @@
 
 之后的字节是数据的内容，最长不得超过0xFF
 
+## 使用示例
+
+    #define My_DATA_INDEX = 1
+
+    tinyFlash_Init();
+    char * _data = "Hello World";
+
+    tinyFlash_Write(My_DATA_INDEX, _data, sizeof(_data));
+
+    char _buf[128] = { 0 }
+    unsigned char _len = 128;
+
+    tinyFlash_Read(My_DATA_INDEX, _buf, &_len);
+
+    printf(_buf);
+
+
+
 ## API介绍
 
 -------------------------------------------------------------------------------
